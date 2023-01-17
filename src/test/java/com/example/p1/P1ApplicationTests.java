@@ -29,4 +29,14 @@ class P1ApplicationTests {
 		List<Member> members = sqlSession.selectList("com.example.p1.repositories.MembersRepository.read");
 		logger.info("Done: MembersRepository.read");
 	}
+	@Test
+	void membersCreate() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		Integer count = sqlSession.insert(
+				"com.example.p1.repositories.MembersRepository.create",
+				new Member(0, "홍길동", 39)
+		);
+		logger.info("Done: MembersRepository.create");
+	}
+
 }

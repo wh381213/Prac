@@ -5,4 +5,8 @@
     <select id="read" resultType="Member">
         select * from members
     </select>
+    <insert id="create" parameterType="Member">
+        insert into members(name, age)
+        values(#{name}, #{age})
+    </insert>
 </mapper>
