@@ -2,6 +2,7 @@ package com.example.p1.controllers;
 
 import com.example.p1.models.Member;
 import com.example.p1.repositories.MembersRepository;
+import com.example.p1.services.MembersService;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import java.util.List;
 @Controller
 public class MembersController {
     @Autowired
-    private MembersRepository membersRepository;
+    private MembersService membersService;
 
     private static List<Member> init() {
         List<Member> members = new ArrayList<>();
@@ -33,7 +34,7 @@ public class MembersController {
 
     @RequestMapping(value = "/membersRead", method = RequestMethod.GET)
     ModelAndView membersRead() {
-        List<Member> members = membersRepository.read();
+        List<Member> members = membersService.read();
         ModelAndView modelAndView = new ModelAndView("members");
         modelAndView.addObject("result", "read");
         modelAndView.addObject("members", members);
@@ -42,14 +43,14 @@ public class MembersController {
     @RequestMapping(value = "/membersCreate", method = RequestMethod.POST)
     @ResponseBody
     String membersCreate(Member member) {
-        membersRepository.create(member);
+        membersService.create(member);
         return "<script>document.location.href = '/membersRead';</script>";
     }
 
     @RequestMapping(value = "/membersDelete/{memberPk}", method = RequestMethod.POST)
     @ResponseBody
     String membersDelete(@PathVariable("memberPk") int memberPk) {
-        membersRepository.delete(memberPk);
+        membersService.delete(memberPk);
         return "<script>document.location.href = '/membersRead';</script>";
     }
 
@@ -59,7 +60,7 @@ public class MembersController {
             @PathVariable("memberPk") int memberPk,
             Member member
     ) {
-        membersRepository.update(memberPk, member);
+        membersService.update(memberPk, member);
         return "<script>document.location.href = '/membersRead';</script>";
     }
 }
