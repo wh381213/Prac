@@ -1,12 +1,23 @@
-package com.example.p1.Models;
+package com.example.p1.models;
 
 public class Member {
     private String name;
     private Integer age;
 
-    public Member(String name, Integer age) {
+    private Integer memberPk;
+
+    public Member(Integer memberPk, String name, Integer age) {
         this.name = name;
         this.age = age;
+        this.memberPk = memberPk;
+    }
+
+    public Integer getMemberPk() {
+        return memberPk;
+    }
+
+    public void setMemberPk(Integer memberPk) {
+        this.memberPk = memberPk;
     }
 
     public String getName() {

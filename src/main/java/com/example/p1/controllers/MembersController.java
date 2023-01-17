@@ -1,6 +1,6 @@
 package com.example.p1.controllers;
 
-import com.example.p1.Models.Member;
+import com.example.p1.models.Member;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +15,11 @@ import java.util.List;
 public class MembersController {
     private static List<Member> init() {
         List<Member> members = new ArrayList<>();
-        members.add(new Member("홍길동", 39));
-        members.add(new Member("김삼순", 33));
-        members.add(new Member("홍명보", 44));
-        members.add(new Member("박지삼", 22));
-        members.add(new Member("권명순", 10)); // Mock 데이터
+        members.add(new Member(1,"홍길동", 39));
+        members.add(new Member(2,"김삼순", 33));
+        members.add(new Member(3,"홍명보", 44));
+        members.add(new Member(4,"박지삼", 22));
+        members.add(new Member(5,"권명순", 10)); // Mock 데이터
         return members;
     }
     public static final List<Member> members = init();
