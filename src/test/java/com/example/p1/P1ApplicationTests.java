@@ -47,4 +47,14 @@ class P1ApplicationTests {
 		);
 		logger.info("Done: MembersRepository.delete");
 	}
+	@Test
+	void membersUpdate() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		Integer count = sqlSession.update(
+				"com.example.p1.repositories.MembersRepository.update",
+				new Member(1, "이순신", 33)
+		);
+		logger.info("Done: MembersRepository.update");
+	}
+
 }

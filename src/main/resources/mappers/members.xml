@@ -13,4 +13,9 @@
         delete from members
         where memberPk = #{memberPk} -- delete 추가
     </delete>
+    <update id="update">
+        update members set name = #{name}, age = #{age}
+        where memberPk = #{memberPk}
+    </update>
+
 </mapper>
