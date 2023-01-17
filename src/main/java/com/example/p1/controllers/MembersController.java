@@ -1,6 +1,7 @@
 package com.example.p1.controllers;
 
 import com.example.p1.models.Member;
+import com.example.p1.repositories.MembersRepository;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,8 @@ import java.util.List;
 @Controller
 public class MembersController {
     @Autowired
-    private SqlSessionFactory sqlSessionFactory;
+    private MembersRepository membersRepository;
+
     private static List<Member> init() {
         List<Member> members = new ArrayList<>();
         members.add(new Member(1,"홍길동", 39));
@@ -31,9 +33,7 @@ public class MembersController {
 
     @RequestMapping(value = "/membersRead", method = RequestMethod.GET)
     ModelAndView membersRead() {
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        List<Member> members = sqlSession.selectList("com.example.p1.repositories.MembersRepository.read");
-
+        List<Member> members = membersRepository.read();
         ModelAndView modelAndView = new ModelAndView("members");
         modelAndView.addObject("result", "read");
         modelAndView.addObject("members", members);
