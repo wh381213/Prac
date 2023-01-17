@@ -9,4 +9,8 @@
         insert into members(name, age)
         values(#{name}, #{age})
     </insert>
+    <delete id="delete" parameterType="Integer">
+        delete from members
+        where memberPk = #{memberPk} -- delete 추가
+    </delete>
 </mapper>

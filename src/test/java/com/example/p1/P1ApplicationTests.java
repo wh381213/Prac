@@ -38,5 +38,13 @@ class P1ApplicationTests {
 		);
 		logger.info("Done: MembersRepository.create");
 	}
-
+	@Test
+	void membersDelete() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		Integer count = sqlSession.delete(
+				"com.example.p1.repositories.MembersRepository.delete",
+				10
+		);
+		logger.info("Done: MembersRepository.delete");
+	}
 }
