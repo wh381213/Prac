@@ -44,7 +44,7 @@
                                         <td><input type="text" name="age" placeholder="Age" value="${member.age}" /></td>
                                         <td>
                                             <button onclick="this.form.action = '/membersUpdate/${status.index}';">Update</button>
-                                            <button onclick="this.form.action = '/membersDelete/${status.index}';">Delete</button>
+                                            <button onclick="this.form.action = '/membersDelete/${member.memberPk}';">Delete</button>
                                         </td>
                                     </tr>
                                     </form>

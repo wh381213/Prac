@@ -11,5 +11,5 @@ public interface MembersRepository {
 //    @Select("select * from members")
     List<Member> read();
     Integer create(Member member);
-
+    Integer delete(Integer memberPk);
 }

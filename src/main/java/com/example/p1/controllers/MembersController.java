@@ -46,10 +46,10 @@ public class MembersController {
         return "<script>document.location.href = '/membersRead';</script>";
     }
 
-    @RequestMapping(value = "/membersDelete/{index}", method = RequestMethod.POST)
+    @RequestMapping(value = "/membersDelete/{memberPk}", method = RequestMethod.POST)
     @ResponseBody
-    String membersDelete(@PathVariable("index") int index) {
-        members.remove(index);
+    String membersDelete(@PathVariable("memberPk") int memberPk) {
+        membersRepository.delete(memberPk);
         return "<script>document.location.href = '/membersRead';</script>";
     }
 
