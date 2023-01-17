@@ -1,8 +1,7 @@
 package com.example.p1;
 
 import com.example.p1.models.Member;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
+import com.example.p1.services.MembersService;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,39 +20,26 @@ class P1ApplicationTests {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private SqlSessionFactory sqlSessionFactory;
+	private MembersService membersService;
 
 	@Test
 	void membersRead() {
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<Member> members = sqlSession.selectList("com.example.p1.repositories.MembersRepository.read");
+		List<Member> members = membersService.read();
 		logger.info("Done: MembersRepository.read");
 	}
 	@Test
 	void membersCreate() {
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-		Integer count = sqlSession.insert(
-				"com.example.p1.repositories.MembersRepository.create",
-				new Member(0, "홍길동", 39)
-		);
+		membersService.create(new Member(0, "홍길동", 39));
 		logger.info("Done: MembersRepository.create");
 	}
 	@Test
 	void membersDelete() {
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-		Integer count = sqlSession.delete(
-				"com.example.p1.repositories.MembersRepository.delete",
-				10
-		);
+		membersService.delete(13);
 		logger.info("Done: MembersRepository.delete");
 	}
 	@Test
 	void membersUpdate() {
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-		Integer count = sqlSession.update(
-				"com.example.p1.repositories.MembersRepository.update",
-				new Member(1, "이순신", 33)
-		);
+		membersService.update(3, new Member(0, "이순신", 33));
 		logger.info("Done: MembersRepository.update");
 	}
 
