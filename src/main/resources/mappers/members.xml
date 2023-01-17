@@ -14,7 +14,7 @@
         where memberPk = #{memberPk} -- delete 추가
     </delete>
     <update id="update">
-        update members set name = #{name}, age = #{age}
+        update members set name = #{member.name}, age = #{member.age}
         where memberPk = #{memberPk}
     </update>
 

@@ -53,13 +53,13 @@ public class MembersController {
         return "<script>document.location.href = '/membersRead';</script>";
     }
 
-    @RequestMapping(value = "/membersUpdate/{index}", method = RequestMethod.POST)
+    @RequestMapping(value = "/membersUpdate/{memberPk}", method = RequestMethod.POST)
     @ResponseBody
     String membersUpdate(
-            @PathVariable("index") int index,
+            @PathVariable("memberPk") int memberPk,
             Member member
     ) {
-        members.set(index, member);
+        membersRepository.update(memberPk, member);
         return "<script>document.location.href = '/membersRead';</script>";
     }
 }
