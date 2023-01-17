@@ -10,4 +10,6 @@ import java.util.List;
 public interface MembersRepository {
 //    @Select("select * from members")
     List<Member> read();
+    Integer create(Member member);
+
 }

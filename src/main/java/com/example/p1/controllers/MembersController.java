@@ -42,7 +42,7 @@ public class MembersController {
     @RequestMapping(value = "/membersCreate", method = RequestMethod.POST)
     @ResponseBody
     String membersCreate(Member member) {
-        members.add(member);
+        membersRepository.create(member);
         return "<script>document.location.href = '/membersRead';</script>";
     }
 
