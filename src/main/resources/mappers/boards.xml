@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.p1.repositories.BoardsRepository">
+    <select id="read" resultType="Board">
+        select * from boards
+    </select>
+    <insert id="create" parameterType="Board">
+        insert into boards (member_pk, title, contents)
+        values (1, #{title},#{contents})
+    </insert>
+    <delete id="delete" parameterType="Integer">
+        delete from boards
+        where board_pk = #{boardPk}
+    </delete>
+    <update id="update">
+        update boards set title = #{board.title}, contents = #{board.contents}
+        where board_pk = #{boardPk}
+    </update>
+
+</mapper>
