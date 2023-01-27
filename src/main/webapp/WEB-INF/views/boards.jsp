@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Members</title>
+    <title>Boards</title>
     <link href="./css/app.css" rel="stylesheet">
 </head>
 <body>
@@ -17,15 +17,15 @@
         <div class="container">
             <nav class="nav">
                 <ul>
-                    <li><h2><a href="/membersRead" class="active">Members</a></h2></li>
+                    <li><h2><a href="/membersRead">Members</a></h2></li>
                     <li><h2><a href="/search">Search</a></h2></li>
-                    <li><h2><a href="/boardsRead">Boards</a></h2></li>
+                    <li><h2><a href="/boardsRead" class="active">Boards</a></h2></li>
                 </ul>
             </nav>
             <hr />
             <section class="contents">
                 <div>
-                    <h3>Members</h3>
+                    <h3>Boards</h3>
                     <hr class="d-block" />
                     <div>
                         <h4>${result}</h4>
@@ -38,14 +38,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <c:forEach items="${members}" var="member" varStatus="status">
+                                <c:forEach items="${boards}" var="board" varStatus="status">
                                     <form method="POST">
                                     <tr>
-                                        <td><input type="text" name="name" placeholder="Name" value="${member.name}" /></td>
-                                        <td><input type="text" name="age" placeholder="Age" value="${member.age}" /></td>
+                                        <td><input type="text" name="name" placeholder="Name" value="${board.name}" /></td>
+                                        <td><input type="text" name="age" placeholder="Age" value="${board.age}" /></td>
                                         <td>
-                                            <button onclick="this.form.action = '/membersUpdate/${member.memberPk}';">Update</button>
-                                            <button onclick="this.form.action = '/membersDelete/${member.memberPk}';">Delete</button>
+                                            <button onclick="this.form.action = '/boardsUpdate/${board.boardPk}';">Update</button>
+                                            <button onclick="this.form.action = '/boardsDelete/${board.boardPk}';">Delete</button>
                                         </td>
                                     </tr>
                                     </form>
@@ -56,7 +56,7 @@
                     <hr class="d-block" />
                     <div>
                         <h4>Create</h4>
-                        <form method="POST" action="/membersCreate">
+                        <form method="POST" action="/boardsCreate">
                             <input type="text" name="name" placeholder="Name" />
                             <input type="text" name="age" placeholder="Age" />
                             <button>Create</button>

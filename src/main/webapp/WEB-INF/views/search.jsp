@@ -19,6 +19,7 @@
                 <ul>
                     <li><h2><a href="/membersRead">Members</a></h2></li>
                     <li><h2><a href="/search" class="active">Search</a></h2></li>
+                    <li><h2><a href="/boardsRead">Boards</a></h2></li>
                 </ul>
             </nav>
             <hr />
