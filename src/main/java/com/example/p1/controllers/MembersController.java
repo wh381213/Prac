@@ -21,17 +21,6 @@ public class MembersController {
     @Autowired
     private MembersService membersService;
 
-    private static List<Member> init() {
-        List<Member> members = new ArrayList<>();
-        members.add(new Member(1,"홍길동", 39));
-        members.add(new Member(2,"김삼순", 33));
-        members.add(new Member(3,"홍명보", 44));
-        members.add(new Member(4,"박지삼", 22));
-        members.add(new Member(5,"권명순", 10)); // Mock 데이터
-        return members;
-    }
-    public static final List<Member> members = init();
-
     @RequestMapping(value = "/membersRead", method = RequestMethod.GET)
     ModelAndView membersRead() {
         List<Member> members = membersService.read();
