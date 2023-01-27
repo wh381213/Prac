@@ -3,7 +3,7 @@
 
 <mapper namespace="com.example.p1.repositories.MembersRepository">
     <select id="read" resultType="Member">
-        select * from members
+        select member_pk, name, age from members
     </select>
     <insert id="create" parameterType="Member">
         insert into members(name, age)
@@ -11,11 +11,11 @@
     </insert>
     <delete id="delete" parameterType="Integer">
         delete from members
-        where memberPk = #{memberPk} -- delete 추가
+        where member_pk = #{memberPk} -- delete 추가
     </delete>
     <update id="update">
         update members set name = #{member.name}, age = #{member.age}
-        where memberPk = #{memberPk}
+        where member_pk = #{memberPk}
     </update>
 
 </mapper>
