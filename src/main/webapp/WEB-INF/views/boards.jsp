@@ -34,19 +34,14 @@
                                 <tr>
                                     <th>제목</th>
                                     <th>내용</th>
-                                    <th>Modify</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <c:forEach items="${boards}" var="board" varStatus="status">
                                     <form method="POST">
                                     <tr>
-                                        <td><input type="text" name="name" placeholder="Name" value="${board.title}" /></td>
-                                        <td><input type="text" name="age" placeholder="Age" value="${board.contents}" /></td>
-                                        <td>
-                                            <button onclick="this.form.action = '/boardsUpdate/${board.boardPk}';">Update</button>
-                                            <button onclick="this.form.action = '/boardsDelete/${board.boardPk}';">Delete</button>
-                                        </td>
+                                        <td><a href = "./boardsDetail?boardPk=${board.boardPk}">${board.title}</a></td>
+                                        <td>${board.contents}</td>
                                     </tr>
                                     </form>
                                 </c:forEach>
