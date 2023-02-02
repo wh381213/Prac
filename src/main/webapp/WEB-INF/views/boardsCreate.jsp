@@ -25,38 +25,23 @@
             <hr />
             <section class="contents">
                 <div>
-                    <h3>Boards</h3>
-                    <hr class="d-block" />
-                    <div>
-                        <h4>Create</h4>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Age</th>
-                                    <th>Modify</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <c:forEach items="${boards}" var="board" varStatus="status">
-                                    <form method="POST">
-                                    <tr>
-                                        <td><input type="text" name="name" placeholder="Name" value="${board.title}" /></td>
-                                        <td><input type="text" name="age" placeholder="Age" value="${board.contents}" /></td>
-                                        <td>
-                                            <button onclick="this.form.action = '/boardsUpdate/${board.boardPk}';">Update</button>
-                                            <button onclick="this.form.action = '/boardsDelete/${board.boardPk}';">Delete</button>
-                                        </td>
-                                    </tr>
-                                    </form>
-                                </c:forEach>
-                            </tbody>
-                        </table>
-                    </div>
-                    <hr class="d-block" />
-                    <div>
-                        <button onclick="document.location.href = '/boardsCreate';">Create</button>
-                    </div>
+                    <form method="post" action = "./boardsCreate">
+                        <h3>Boards</h3>
+                        <hr class="d-block" />
+                        <div>
+                            <h4>Create</h4>
+                            <div>
+                                <input type="text" name="title" placeholder="제목" />
+                            </div>
+                            <div>
+                                <textarea name="contents" placeholder="내용"></textarea>
+                            </div>
+                        </div>
+                        <hr class="d-block" />
+                        <div>
+                            <button>Create</button>
+                        </div>
+                    </form>
                 </div>
             </section>
             <hr />

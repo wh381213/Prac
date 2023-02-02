@@ -32,8 +32,8 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Age</th>
+                                    <th>제목</th>
+                                    <th>내용</th>
                                     <th>Modify</th>
                                 </tr>
                             </thead>
