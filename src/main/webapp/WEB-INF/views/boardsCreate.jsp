@@ -28,7 +28,7 @@
                     <h3>Boards</h3>
                     <hr class="d-block" />
                     <div>
-                        <h4>${result}</h4>
+                        <h4>Create</h4>
                         <table>
                             <thead>
                                 <tr>

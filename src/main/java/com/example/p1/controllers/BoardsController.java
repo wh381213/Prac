@@ -25,6 +25,15 @@ public class BoardsController {
         modelAndView.addObject("boards", boards);
         return modelAndView;
     }
+    @RequestMapping(value = "/boardsCreate", method = RequestMethod.GET)
+    ModelAndView boardsCreate() {
+        List<Board> boards = boardsService.read();
+        ModelAndView modelAndView = new ModelAndView("boardsCreate");
+        modelAndView.addObject("result", "read");
+        modelAndView.addObject("boards", boards);
+        return modelAndView;
+    }
+
     @RequestMapping(value = "/boardsCreate", method = RequestMethod.POST)
     @ResponseBody
     String boardsCreate(Board board) {
