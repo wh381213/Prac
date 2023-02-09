@@ -1,6 +1,6 @@
 package com.example.p1.controllers;
 
-import com.example.p1.models.Member;
+import com.example.p1.models.User;
 import com.example.p1.services.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,10 +19,10 @@ public class SearchController {
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     ModelAndView search(@RequestParam(required = false) String q) {
-        List<Member> members = searchService.search(q);
+        List<User> users = searchService.search(q);
         ModelAndView modelAndView = new ModelAndView("search");
         modelAndView.addObject("result", "search");
-        modelAndView.addObject("members", members);
+        modelAndView.addObject("users", users);
         return modelAndView;
     }
 }

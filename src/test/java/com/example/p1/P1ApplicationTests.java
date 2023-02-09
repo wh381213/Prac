@@ -1,7 +1,7 @@
 package com.example.p1;
 
-import com.example.p1.models.Member;
-import com.example.p1.services.MembersService;
+import com.example.p1.models.User;
+import com.example.p1.services.UsersService;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,27 +20,27 @@ class P1ApplicationTests {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private MembersService membersService;
+	private UsersService usersService;
 
 	@Test
-	void membersRead() {
-		List<Member> members = membersService.read();
-		logger.info("Done: MembersRepository.read");
+	void usersRead() {
+		List<User> users = usersService.read();
+		logger.info("Done: UsersRepository.read");
 	}
 	@Test
-	void membersCreate() {
-		membersService.create(new Member(0, "홍길동", 39));
-		logger.info("Done: MembersRepository.create");
+	void usersCreate() {
+		usersService.create(new User(0, "홍길동", 39));
+		logger.info("Done: UsersRepository.create");
 	}
 	@Test
-	void membersDelete() {
-		membersService.delete(13);
-		logger.info("Done: MembersRepository.delete");
+	void usersDelete() {
+		usersService.delete(13);
+		logger.info("Done: UsersRepository.delete");
 	}
 	@Test
-	void membersUpdate() {
-		membersService.update(3, new Member(0, "이순신", 33));
-		logger.info("Done: MembersRepository.update");
+	void usersUpdate() {
+		usersService.update(3, new User(0, "이순신", 33));
+		logger.info("Done: UsersRepository.update");
 	}
 
 }

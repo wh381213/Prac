@@ -17,7 +17,7 @@
         <div class="container">
             <nav class="nav">
                 <ul>
-                    <li><h2><a href="/membersRead">Members</a></h2></li>
+                    <li><h2><a href="/usersRead">Users</a></h2></li>
                     <li><h2><a href="/search">Search</a></h2></li>
                     <li><h2><a href="/boardsRead" class="active">Boards</a></h2></li>
                 </ul>

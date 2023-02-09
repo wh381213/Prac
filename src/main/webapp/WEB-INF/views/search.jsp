@@ -17,7 +17,7 @@
         <div class="container">
             <nav class="nav">
                 <ul>
-                    <li><h2><a href="/membersRead">Members</a></h2></li>
+                    <li><h2><a href="/usersRead">Users</a></h2></li>
                     <li><h2><a href="/search" class="active">Search</a></h2></li>
                     <li><h2><a href="/boardsRead">Boards</a></h2></li>
                 </ul>
@@ -43,10 +43,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${members}" var="member" varStatus="status">
+                            <c:forEach items="${users}" var="user" varStatus="status">
                                 <tr>
-                                    <td>${member.name}</td>
-                                    <td>${member.age}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.age}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>

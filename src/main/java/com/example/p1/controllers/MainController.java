@@ -9,6 +9,6 @@ public class MainController {
     @RequestMapping("/")
     @ResponseBody
     String root(){
-        return "<script>document.location.href = '/membersRead';</script>";
+        return "<script>document.location.href = '/usersRead';</script>";
     }
 }

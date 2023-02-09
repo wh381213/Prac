@@ -6,7 +6,7 @@
         select * from boards
     </select>
     <insert id="create" parameterType="Board">
-        insert into boards (member_pk, title, contents)
+        insert into boards (user_pk, title, contents)
         values (1, #{title},#{contents})
     </insert>
     <delete id="delete" parameterType="Integer">

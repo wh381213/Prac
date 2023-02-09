@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Members</title>
+    <title>Users</title>
     <link href="./css/app.css" rel="stylesheet">
 </head>
 <body>
@@ -17,7 +17,7 @@
         <div class="container">
             <nav class="nav">
                 <ul>
-                    <li><h2><a href="/membersRead" class="active">Members</a></h2></li>
+                    <li><h2><a href="/usersRead" class="active">Users</a></h2></li>
                     <li><h2><a href="/search">Search</a></h2></li>
                     <li><h2><a href="/boardsRead">Boards</a></h2></li>
                 </ul>
@@ -25,7 +25,7 @@
             <hr />
             <section class="contents">
                 <div>
-                    <h3>Members</h3>
+                    <h3>Users</h3>
                     <hr class="d-block" />
                     <div>
                         <h4>${result}</h4>
@@ -38,14 +38,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <c:forEach items="${members}" var="member" varStatus="status">
+                                <c:forEach items="${users}" var="user" varStatus="status">
                                     <form method="POST">
                                     <tr>
-                                        <td><input type="text" name="name" placeholder="Name" value="${member.name}" /></td>
-                                        <td><input type="text" name="age" placeholder="Age" value="${member.age}" /></td>
+                                        <td><input type="text" name="name" placeholder="Name" value="${user.name}" /></td>
+                                        <td><input type="text" name="age" placeholder="Age" value="${user.age}" /></td>
                                         <td>
-                                            <button onclick="this.form.action = '/membersUpdate/${member.memberPk}';">Update</button>
-                                            <button onclick="this.form.action = '/membersDelete/${member.memberPk}';">Delete</button>
+                                            <button onclick="this.form.action = '/usersUpdate/${user.userPk}';">Update</button>
+                                            <button onclick="this.form.action = '/usersDelete/${user.userPk}';">Delete</button>
                                         </td>
                                     </tr>
                                     </form>
@@ -56,7 +56,7 @@
                     <hr class="d-block" />
                     <div>
                         <h4>Create</h4>
-                        <form method="POST" action="/membersCreate">
+                        <form method="POST" action="/usersCreate">
                             <input type="text" name="name" placeholder="Name" />
                             <input type="text" name="age" placeholder="Age" />
                             <button>Create</button>

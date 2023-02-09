@@ -4,15 +4,15 @@ import java.time.LocalDateTime;
 
 public class Board {
     private Integer boardPk;
-    private Integer memberPk;
+    private Integer userPk;
     private String title;
     private String contents;
 
     private LocalDateTime createdAt;
 
-    public Board(Integer boardPk, Integer memberPk, String title, String contents, LocalDateTime createdAt) {
+    public Board(Integer boardPk, Integer userPk, String title, String contents, LocalDateTime createdAt) {
         this.boardPk = boardPk;
-        this.memberPk = memberPk;
+        this.userPk = userPk;
         this.title = title;
         this.contents = contents;
         this.createdAt = createdAt;
@@ -26,12 +26,12 @@ public class Board {
         this.boardPk = boardPk;
     }
 
-    public Integer getMemberPk() {
-        return memberPk;
+    public Integer getUserPk() {
+        return userPk;
     }
 
-    public void setMemberPk(Integer memberPk) {
-        this.memberPk = memberPk;
+    public void setUserPk(Integer userPk) {
+        this.userPk = userPk;
     }
 
     public String getTitle() {
