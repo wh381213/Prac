@@ -40,7 +40,7 @@
                                 <c:forEach items="${boards}" var="board" varStatus="status">
                                     <form method="POST">
                                     <tr>
-                                        <td><a href = "./boardsDetail?boardPk=${board.boardPk}">${board.title}</a></td>
+                                        <td><a href = "./boardsDetail/${board.boardPk}">${board.title}</a></td>
                                         <td>${board.contents}</td>
                                     </tr>
                                     </form>

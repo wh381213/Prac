@@ -5,6 +5,10 @@
     <select id="read" resultType="Board">
         select * from boards
     </select>
+    <select id="detail" resultType="Board">
+        select * from boards
+        where board_pk = #{boardPk}
+    </select>
     <insert id="create" parameterType="Board">
         insert into boards (user_pk, title, contents)
         values (1, #{title},#{contents})

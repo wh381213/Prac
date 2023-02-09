@@ -11,6 +11,7 @@ import java.util.List;
 public interface BoardsRepository {
 //    @Select("select * from users")
     List<Board> read();
+    Board detail(Integer boardPk);
     Integer create(Board board);
     Integer delete(Integer boardPk);
     Integer update(@Param("boardPk") Integer boardPk, @Param("board") Board board);

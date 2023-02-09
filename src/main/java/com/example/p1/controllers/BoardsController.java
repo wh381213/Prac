@@ -40,12 +40,12 @@ public class BoardsController {
         boardsService.create(board);
         return "<script>document.location.href = '/boardsRead';</script>";
     }
-    @RequestMapping(value = "/boardsDetail", method = RequestMethod.GET)
-    ModelAndView boardsDetail() {
-        List<Board> boards = boardsService.read();
+    @RequestMapping(value = "/boardsDetail/{boardPk}", method = RequestMethod.GET)
+    ModelAndView boardsDetail(@PathVariable("boardPk") int boardPk) {
+        Board board = boardsService.detail(boardPk);
         ModelAndView modelAndView = new ModelAndView("boardsDetail");
-        modelAndView.addObject("result", "read");
-        modelAndView.addObject("boards", boards);
+        modelAndView.addObject("result", "detail");
+        modelAndView.addObject("board", board);
         return modelAndView;
     }
     @RequestMapping(value = "/boardsDelete/{boardPk}", method = RequestMethod.POST)

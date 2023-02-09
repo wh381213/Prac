@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boards</title>
-    <link href="./css/app.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
 </head>
 <body>
     <div>
@@ -31,10 +31,12 @@
                         <div>
                             <h4>Detail</h4>
                             <div>
-                                <input type="text" name="title" placeholder="제목" />
+                                <!--<input type="text" name="title" placeholder="제목" />-->
+                                ${board.title}
                             </div>
                             <div>
-                                <textarea name="contents" placeholder="내용"></textarea>
+                                <!--<textarea name="contents" placeholder="내용"></textarea>-->
+                                ${board.contents}
                             </div>
                         </div>
                         <hr class="d-block" />

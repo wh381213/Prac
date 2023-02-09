@@ -16,7 +16,9 @@ public class BoardsService {
     public List<Board> read() {
         return boardsRepository.read();
     }
-
+    public Board detail(Integer boardPk) {
+        return boardsRepository.detail(boardPk);
+    }
     public Integer create(Board board) {
         return boardsRepository.create(board);
     }
