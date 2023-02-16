@@ -10,9 +10,8 @@
 </head>
 <body>
     <div>
-        <header>
-            <h1>Spring Boot MVC study</h1>
-        </header>
+        <c:import url="../layout/header.jsp" charEncoding="UTF-8">
+        </c:import>
         <hr />
         <div class="container">
             <nav class="nav">
