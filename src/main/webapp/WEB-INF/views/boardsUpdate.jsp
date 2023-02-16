@@ -31,12 +31,10 @@
                         <div>
                             <h4>Detail</h4>
                             <div>
-                                <!--<input type="text" name="title" placeholder="제목" />-->
-                                ${board.title}
+                                <input type="text" name="title" placeholder="제목" value="${board.title}" />
                             </div>
                             <div>
-                                <!--<textarea name="contents" placeholder="내용"></textarea>-->
-                                ${board.contents}
+                                <textarea name="contents" placeholder="내용">${board.contents}</textarea>
                             </div>
                         </div>
                         <hr class="d-block" />

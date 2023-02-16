@@ -45,6 +45,17 @@ public class BoardsController {
         Board board = boardsService.detail(boardPk);
         ModelAndView modelAndView = new ModelAndView("boardsDetail");
         modelAndView.addObject("result", "detail");
+        modelAndView.addObject("boardPk", boardPk);
+        modelAndView.addObject("board", board);
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/boardsUpdate/{boardPk}", method = RequestMethod.GET)
+    ModelAndView boardsUpdate(@PathVariable("boardPk") int boardPk) {
+        Board board = boardsService.detail(boardPk);
+        ModelAndView modelAndView = new ModelAndView("boardsUpdate");
+        modelAndView.addObject("result", "update");
+        modelAndView.addObject("boardPk", boardPk);
         modelAndView.addObject("board", board);
         return modelAndView;
     }
