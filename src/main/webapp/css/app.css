@@ -28,6 +28,14 @@ input[type=text] {
 .d-block {
   display: block;
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header > span {
+  margin-right: 16px;
+}
 .container {
   display: flex;
   border-top: 1px solid #ccc;
