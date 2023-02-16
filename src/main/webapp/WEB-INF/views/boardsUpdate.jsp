@@ -40,6 +40,7 @@
                         <hr class="d-block" />
                         <div>
                             <button type="submit">Update</button>
+                            <button type="submit" onclick="this.form.action = '/boardsDelete/${boardPk}'">Delete</button>
                         </div>
                     </form>
                 </div>
