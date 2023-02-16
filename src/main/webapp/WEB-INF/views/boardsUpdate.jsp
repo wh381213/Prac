@@ -25,7 +25,7 @@
             <hr />
             <section class="contents">
                 <div>
-                    <form method="post" action = "./boardsCreate">
+                    <form method="post" action = "/boardsUpdate/${boardPk}">
                         <h3>Boards</h3>
                         <hr class="d-block" />
                         <div>
@@ -39,7 +39,7 @@
                         </div>
                         <hr class="d-block" />
                         <div>
-                            <button type="button" onclick="document.location.href='/boardsUpdate/${boardPk}'">Update</button>
+                            <button type="submit">Update</button>
                         </div>
                     </form>
                 </div>
